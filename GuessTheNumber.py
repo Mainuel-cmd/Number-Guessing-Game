@@ -24,6 +24,29 @@ def check_guess():
     except ValueError:
         feedback_label.config(text="Please enter a valid number.", fg="#FF6B9D")
         return
+        
+    if user_input == secret_number:
+        feedback_label.config(text=f"Correct! The number was {secret_number}.", fg="#2E8B57")
+        guess_button.config(state="disabled", bg="#A8E6CF", fg="#2E8B57")       
+        entry.config(state="disabled")
+    elif user_input < secret_number:
+        feedback_label.config(text="Too low! Try again.", fg="#FF6B9D")      
+        attempts_left -= 1
+    else:
+        feedback_label.config(text="Too high! Try again.", fg="#FF6B9D")    
+        attempts_left -= 1
+
+    
+    update_attempts()
+
+    
+    if attempts_left <= 0 and guess_button["state"] != "disabled":
+        feedback_label.config(text=f"Game over! The number was {secret_number}.", fg="#A00000")  
+        guess_button.config(state="disabled")
+        entry.config(state="disabled")
+        
+        
+
 
     
     
