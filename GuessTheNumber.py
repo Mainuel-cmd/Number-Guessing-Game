@@ -46,8 +46,17 @@ def check_guess():
         entry.config(state="disabled")
         
         
+def restart_game():
+    global secret_number, attempts_left
 
-
+    secret_reservation = random.randint(1, 100)
+    secret_number = secret_reservation
+    attempts_left = 7
+    update_attempts()
+    feedback_label.config(text="Guess a number between 1 and 100.", fg="#2E8B57")  
+    guess_button.config(state="normal", bg="#40E0D0", fg="white")
+    entry.config(state="normal", bg="white", fg="black")
+    entry.delete(0, tk.END)
     
     
     
