@@ -15,6 +15,16 @@ def update_attempts():
     attempts_label.config(text=f"Attempts left: {attempts_left}")
     
 
+def check_guess():
+    global attempts_left
+
+    
+    try:
+        user_input = int(entry.get())
+    except ValueError:
+        feedback_label.config(text="Please enter a valid number.", fg="#FF6B9D")
+        return
+
     
     
     
