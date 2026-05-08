@@ -1,10 +1,10 @@
 #!/bin/bash
-cp ~/storage/shared/"CODES AND PROGRAMS"/"Programs or Code"/"File-Handling"/GuessTheNumber.py . 2>/dev/null || echo "❌ GuessTheNumber.py not found"
+cp /storage/emulated/0/"CODES AND PROGRAMS"/"Programs or Code"/"File Handling"/GuessTheNumber.py . 2>/dev/null || echo "❌ Not found"
 git add GuessTheNumber.py
-if git diff --staged -- GuessTheNumber.py; then
-  git commit -m "🔄 Auto-sync latest Pydroid changes"
+if git diff --staged -- GuessTheNumber.py >/dev/null; then
+  git commit -m "🔄 Pydroid sync $(date)"
   git push
   echo "✅ Synced to GitHub!"
 else
-  echo "ℹ️ No changes detected"
+  echo "ℹ️ No changes"
 fi

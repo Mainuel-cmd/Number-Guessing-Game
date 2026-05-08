@@ -90,6 +90,19 @@ feedback_label = tk.Label(
     font=("Arial", 10, "bold")
 )
 feedback_label.pack(pady=10)
+
+attempts_label = tk.Label(
+    root, text=f"Attempts left: {attempts_left}",
+    font=("Arial", 10, "bold"), fg="#FF6B9D", bg="#B2F2BB"   
+)
+attempts_label.pack(pady=5)
+
+restart_button = tk.Button(
+    root, text="Restart Game (*ﾟ∀ﾟ)っ?", command=restart_game,
+    font=("Arial", 10),
+    bg="#FFB6C1", fg="white", activebackground="#FF6B9D"    
+)
+restart_button.pack(pady=10)
     
     
     
