@@ -59,5 +59,19 @@ def restart_game():
     entry.delete(0, tk.END)
     
     
+title_label = tk.Label(
+    root, text="Number Guessing Game",
+    font=("Arial", 16, "bold"),
+    bg="#B2F2BB", fg="#40E0D0"             
+)
+title_label.pack(pady=10)
+
+instruction_label = tk.Label(
+    root, text="Guess a number between 1 and 100:",
+    bg="#B2F2BB", fg="#555555"             
+)
+instruction_label.pack()
+    
+    
     
 root.mainloop()
