@@ -71,6 +71,25 @@ instruction_label = tk.Label(
     bg="#B2F2BB", fg="#555555"             
 )
 instruction_label.pack()
+
+
+
+entry = tk.Entry(root, font=("Arial", 12), width=20, bg="white", fg="#2E8B57")
+entry.pack(pady=10)
+
+guess_button = tk.Button(
+    root, text="Guess! (*｀・ω-)ノ", command=check_guess,
+    font=("Arial", 10, "bold"),
+    bg="#40E0D0", fg="white", activebackground="#00CED1", activeforeground="white"
+)
+guess_button.pack(pady=5)
+
+feedback_label = tk.Label(
+    root, text="Guess a number between 1 and 100.",
+    fg="#2E8B57", bg="#B2F2BB",
+    font=("Arial", 10, "bold")
+)
+feedback_label.pack(pady=10)
     
     
     
